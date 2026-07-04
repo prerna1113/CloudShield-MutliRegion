@@ -61,8 +61,56 @@ if(result.length ===0){
 
 };
 
+
+
+const updateIncident = (req, res) => {
+ 
+
+  const { id } = req.params;
+  const { title, description, severity } = req.body;
+
+  const query =
+    "UPDATE incidents SET title=?, description=?, severity=? WHERE id=?";
+
+  db.query(
+    query,
+    [title, description, severity, id],
+    (err, result) => {
+      if (err) {
+        console.log("SQL Error:", err);
+        return res.status(500).json(err);
+      }
+
+      console.log(result);
+
+      res.status(200).json({
+        message: "Updated Successfully",
+      });
+    }
+  );
+};
+
+const deleteIncident =(req,res)=>{
+  const {id}  = req.params;
+
+  const query = "DELETE FROM incidents WHERE id =?";
+
+  db.query(query,[id],(err,result)=>{
+    if(err){
+      return res.status(500).json(err);
+    }
+    res.status(200).json({
+      message:"Incident Deleted Successfully",
+    });
+  });
+};
+
+
+
 module.exports = {
   createIncident,
   getAllIncidents,
-  getIncidentById
+  getIncidentById,
+  updateIncident,
+  deleteIncident,
 };

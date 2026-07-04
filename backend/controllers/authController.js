@@ -48,6 +48,9 @@ const register = async (req, res) => {
 
 
 const login = (req,res)=>{
+  console.log("Login request:", req.body);
+
+ 
     const {email,password} = req.body;
 
     const query = 
