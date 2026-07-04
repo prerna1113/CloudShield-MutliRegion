@@ -129,7 +129,7 @@ CloudShield
 ## EC2 Instances
 
 <p align="center">
-<img src="Screenshot/Ec2instances.png" width="900">
+<img src="Screenshot/Ec2 instances.png" width="900">
 </p>
 
 ---
