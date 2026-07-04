@@ -23,7 +23,7 @@ The application allows authenticated users to manage incidents through a modern 
 # 🏗 Architecture
 
 <p align="center">
-<img src="screenshots/architecture.png" width="900">
+<img src="Screenshot/architecture.png" width="900">
 </p>
 
 ---
